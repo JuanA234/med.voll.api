@@ -14,17 +14,12 @@ import med.voll.api.domain.medico.Especialidad;
  * @author JuanAndres
  */
 public record DatosAgendarConsulta(
-        Long id, 
-        
         @NotNull
-        Long idPaciente, 
-        Long idMedico, 
-        
+        Long idPaciente,
+        Long idMedico,
         Especialidad especialidad,
-        
         @NotNull
-        @Future        
-        LocalDateTime fecha
-        ) {
+        @Future
+        LocalDateTime fecha) {
 
 }

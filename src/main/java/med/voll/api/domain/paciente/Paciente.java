@@ -15,7 +15,6 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.domain.direccion.DatosDireccion;
 import med.voll.api.domain.direccion.Direccion;
 
 /**
@@ -32,12 +31,12 @@ import med.voll.api.domain.direccion.Direccion;
 public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nombre;
     private String email;
     private String telefono;
     private String documento;
-    private boolean activo;
+    private Boolean activo;
     @Embedded
     private Direccion datosDireccion;
 

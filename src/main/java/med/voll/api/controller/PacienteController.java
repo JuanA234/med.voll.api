@@ -4,6 +4,7 @@
  */
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import java.net.URI;
@@ -34,6 +35,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  */
 @RestController
 @RequestMapping("/pacientes")
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
 
     @Autowired
@@ -52,7 +54,7 @@ public class PacienteController {
     @GetMapping
     public ResponseEntity<Page<DatosListaPaciente>> listar(@PageableDefault(page = 0, size = 10, sort = {"nombre"}) Pageable paginacion) {
         //return pacienteRepository.findAll(paginacion).map(DatosListaPaciente::new);
-        return ResponseEntity.ok(pacienteRepository.findByActivoTrue(paginacion).map(DatosListaPaciente::new));
+        return ResponseEntity.ok(pacienteRepository.findAllByActivoTrue(paginacion).map(DatosListaPaciente::new));
     }
     
     @PutMapping

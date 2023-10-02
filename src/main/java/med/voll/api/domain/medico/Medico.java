@@ -17,7 +17,6 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.domain.direccion.DatosDireccion;
 import med.voll.api.domain.direccion.Direccion;
 
 /**
@@ -39,7 +38,7 @@ public class Medico {
     private String email;
     private String documento;
     private String telefono;
-    private boolean activo;
+    private Boolean activo;
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
     @Embedded
